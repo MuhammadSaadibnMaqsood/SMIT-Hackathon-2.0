@@ -77,7 +77,7 @@ export async function POST(request: NextRequest) {
       const supabase = createServerSupabase();
       if (supabase) {
         const payload = {
-          type: "broadcast",
+          type: "broadcast" as const,
           event: "new_message",
           payload: {
             conversationId,
