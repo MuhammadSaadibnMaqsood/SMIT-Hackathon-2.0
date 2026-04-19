@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+/* ========================================
+   Helplytics AI — Design System
+   Cream/Teal Premium Theme
+   ======================================== */
+
+:root {
+  /* Cream Light Theme */
+  --background: #F9F8F3;
+  --foreground: #1A202C;
+  --card: #ffffff;
+  --card-foreground: #1A202C;
+  --popover: #ffffff;
+  --popover-foreground: #1A202C;
+  --primary: #0D9488;
+  --primary-foreground: #ffffff;
+  --secondary: #F0EDE6;
+  --secondary-foreground: #1A202C;
+  --muted: #F0EDE6;
+  --muted-foreground: #6B7280;
+  --accent: #F0EDE6;
+  --accent-foreground: #1A202C;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #E5E2DA;
+  --input: #E5E2DA;
+  --ring: #0D9488;
+  --radius: 1.5rem;
+
+  /* Hero / Dark Sections */
+  --hero-bg: #1A202C;
+  --hero-fg: #ffffff;
+
+  /* Badge Colors */
+  --badge-teal: #0D9488;
+  --badge-red: #EF4444;
+  --badge-green: #10B981;
+  --badge-amber: #F59E0B;
+  --badge-blue: #3B82F6;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-xl: var(--radius);
+  --font-sans: 'Inter', var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono);
+
+  /* Custom colors */
+  --color-hero: var(--hero-bg);
+  --color-hero-fg: var(--hero-fg);
+  --color-cream: #F9F8F3;
+  --color-cream-dark: #F0EDE6;
+  --color-slate-dark: #1A202C;
+  --color-teal: #0D9488;
+  --color-teal-light: #14B8A6;
+}
+
+/* ========================================
+   Base Styles
+   ======================================== */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #D1CFC8 transparent;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', var(--font-sans), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   Gradient Backgrounds
+   ======================================== */
+
+.bg-cream-gradient {
+  background: linear-gradient(135deg, #F9F8F3 0%, #F0EDE6 50%, #E8E4DA 100%);
+}
+
+.bg-hero-gradient {
+  background: linear-gradient(135deg, #1A202C 0%, #2D3748 100%);
+}
+
+.bg-teal-gradient {
+  background: linear-gradient(135deg, #0D9488 0%, #14B8A6 100%);
+}
+
+/* ========================================
+   Animations
+   ======================================== */
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-shimmer {
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Stagger animation delays */
+.stagger-1 { animation-delay: 0.05s; }
+.stagger-2 { animation-delay: 0.1s; }
+.stagger-3 { animation-delay: 0.15s; }
+.stagger-4 { animation-delay: 0.2s; }
+
+/* ========================================
+   Card Styles
+   ======================================== */
+
+.card-cream {
+  background: #ffffff;
+  border: 1px solid #E5E2DA;
+  border-radius: 1.5rem;
+}
+
+.card-hero {
+  background: linear-gradient(135deg, #1A202C 0%, #2D3748 100%);
+  border-radius: 1.5rem;
+  color: #ffffff;
+}
+
+/* ========================================
+   Badge Pill Styles
+   ======================================== */
+
+.badge-teal {
+  background: #E6F7F5;
+  color: #0D9488;
+  border: 1px solid #B2DFDB;
+}
+
+.badge-red {
+  background: #FEE2E2;
+  color: #EF4444;
+  border: 1px solid #FECACA;
+}
+
+.badge-green {
+  background: #D1FAE5;
+  color: #059669;
+  border: 1px solid #A7F3D0;
+}
+
+.badge-amber {
+  background: #FEF3C7;
+  color: #D97706;
+  border: 1px solid #FDE68A;
+}
+
+/* ========================================
+   Section Labels
+   ======================================== */
+
+.section-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #0D9488;
+}
+
+.section-label-light {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #14B8A6;
+}
